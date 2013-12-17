@@ -1,0 +1,8 @@
+<h3>Fiche</h3><br>
+<p><%= @item.title %></p><br>
+<p><%= @item.body %></p>
+<%= link_to "Retour à la liste des  articles", items_path() %>
+<%= link_to "Editer cette fiche", edit_item_path(@item.id)%>
+
+<%= link_to "Supprimer ! ", item_path(@item.id), method: :delete,
+                                     data: { confirm: "T'es sûr ? "}%>
