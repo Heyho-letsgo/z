@@ -1,8 +1,17 @@
-<h3>Fiche</h3><br>
-<p><%= @item.title %></p><br>
-<p><%= @item.body %></p>
-<%= link_to "Retour à la liste des  articles", items_path() %>
-<%= link_to "Editer cette fiche", edit_item_path(@item.id)%>
 
-<%= link_to "Supprimer ! ", item_path(@item.id), method: :delete,
-                                     data:  {confirm: "T'es sur ?"}  %>
+<%= image_tag @item.image.url %>
+<h3>Id Fiche n° : <%= @item.id %></h3><br>
+<h6>Nombre de commentaires : <%= @item.comments.size %> </h6></br>
+<p><%= @item.title %></p><br>
+
+<p><%= @item.body %></p>
+
+
+
+<%= render partial: 'comments/form' %><h6>Nombre de commentaires : <%= @item.comments.size %> </h6></br>
+
+<%= link_to "Retour à la liste des  articles", items_path() %> 
+<%= link_to "Editer cette fiche", edit_item_path(@item.id)%>
+<%= link_to "Supprimer ! ", item_path(@item.id), method: :delete, data:  {confirm: "T'es sur ?"}  %>
+
+<%=render partial: 'items/comment', collection: @item.comments%>

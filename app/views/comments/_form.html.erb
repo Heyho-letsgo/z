@@ -1,0 +1,9 @@
+<h6>Le partial comment - Rajouter un commentaire</h6>
+
+<%= form_for [ @item, @comment ] do |f| %>
+<%= f.label :author_name %>
+<%= f.text_field :author_name %> <br>
+<%= f.label :body %>
+<%= f.text_area :body %> <br>
+<%= f.submit 'Submit' %>
+<% end %>

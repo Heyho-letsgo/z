@@ -1,6 +1,7 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(@item, html: {multipart: true}) do |f| %>
+   
    <p>
-          
+                  
           <%= f.label :title %><br />
           <%= f.text_field :title %>
         </p>
@@ -9,8 +10,13 @@
           <%= f.text_area :body %>
         </p>
         <p>
+Rajout Image
+    <%= f.label :image, "Attach an Image" %>
+    <%= f.file_field :image %>
     <%= f.submit "Créer et rediriger sur item"  %> 
-
+    
+    
+  
   </p>
 <% end %>
     <%= link_to "Accueuil", items_path() %>
